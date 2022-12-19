@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0;
+}
+
+body {
+  background-image: url("./images/bg-pattern-desktop.svg");
+  font-family: Josefin Sans, sans-serif;
+}
+
+section {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 10vh 90vh;
+  grid-template-areas:
+    "topIcon hero"
+    "content hero";
+}
+
+.topIcon {
+  grid-area: topIcon;
+}
+
+.content {
+  grid-area: content;
+}
+
+.heroContainer {
+  grid-area: hero;
+}
+
+/* Main Content */
+
+.hero {
+  /* width: 100%; */
+  height: 100vh;
+}
+
+.heroMobile {
+  display: none;
+}
+
+nav {
+  padding-left: 9rem;
+  padding-top: 3rem;
+}
+
+main {
+  padding-left: 9rem;
+  padding-top: 10rem;
+}
+
+.topIcon {
+  padding-bottom: 8rem;
+}
+
+.headerContainer {
+  max-width: 20rem;
+}
+
+h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+}
+
+.mainText p {
+  line-height: 2rem;
+  color: hsl(0, 36%, 70%);
+  margin-bottom: 3rem;
+}
+
+.mainText {
+  width: 28rem;
+}
+
+/* Input */
+input,
+select,
+textarea {
+  color: hsl(0, 36%, 70%);
+}
+
+input::placeholder {
+  color: hsl(0, 36%, 70%);
+}
+
+.emailInput {
+  position: relative;
+}
+
+.emailInput input {
+  border: 1px solid hsl(0, 36%, 70%);
+  border-radius: 100px;
+  padding: 1.2rem 2rem;
+  padding-right: 8rem;
+}
+
+.emailInput button {
+  background: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%),
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%) 100%
+  );
+  border: none;
+  padding: 0.6rem 2.5rem;
+  border-radius: 100px;
+
+  color: white;
+  font-size: 2rem;
+
+  position: absolute;
+  left: 21rem;
+}
+
+#errorIcon {
+  position: absolute;
+  left: 19rem;
+  bottom: 3.2rem;
+
+  visibility: hidden;
+
+  color: #f05d5f;
+}
+
+#errorText {
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+
+  visibility: hidden;
+
+  color: #f05d5f;
+}
+
+.error {
+  visibility: visible !important;
+}
+
+.emailInput button:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, hsl(0, 100%, 94%), hsl(0, 55%, 84%) 100%);
+}
+
+/* ///// Screen Sizes ///// */
+
+@media only screen and (max-width: 1255px) {
+  main {
+    padding-left: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  section {
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas:
+      "topIcon hero"
+      "content hero";
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .emailInput input {
+    padding-right: 2rem;
+  }
+
+  .emailInput button {
+    left: 15rem;
+  }
+
+  #errorIcon {
+    left: 13rem;
+  }
+
+  .mainText {
+    width: 22rem;
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  section {
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 1fr 1fr;
+    grid-template-areas:
+      "topIcon"
+      "heroMobile"
+      "content";
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroContainer {
+    display: none;
+  }
+
+  .heroMobile {
+    display: block;
+    grid-area: heroMobile;
+
+    width: 100%;
+  }
+
+  nav {
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: 2rem;
+
+    /* padding: auto 0rem auto 2rem; */
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0 3rem 0;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .mainText {
+    font-size: 1rem;
+  }
+
+  .emailInput input {
+    padding-right: 4rem;
+  }
+  .emailInput button {
+    left: 17rem;
+  }
+
+  #errorIcon {
+    left: 15rem;
+  }
+
+  .mainText {
+    width: 22rem;
+    text-align: center;
+  }
+
+  .mainText p {
+    line-height: 1.5rem;
+  }
+}
